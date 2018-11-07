@@ -26,6 +26,7 @@
      defined(TARGET_STM32L476JG) ||\
      defined(TARGET_STM32L476VG) ||\
      defined(TARGET_STM32L486RG) ||\
+     defined(TARGET_STM32L486VG) ||\
      defined(TARGET_STM32L471QG))
 /* only GCC_ARM and IAR toolchains have the stack on SRAM2 */
 #if (((defined(__GNUC__) && !defined(__CC_ARM)) ||\
