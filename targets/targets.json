@@ -4628,7 +4628,7 @@
                 "value": 1
             }
         },
-        "macros_add": ["TWO_RAM_REGIONS"],
+        "macros_add": ["USBHOST_OTHER", "MBEDTLS_CONFIG_HW_SUPPORT", "TWO_RAM_REGIONS"],
         "device_has_add": ["ANALOGOUT", "CAN", "CRC", "SERIAL_ASYNCH", "SERIAL_FC", "TRNG", "FLASH"],
         "release_versions": ["2", "5"],
         "device_name": "STM32L486VG"
