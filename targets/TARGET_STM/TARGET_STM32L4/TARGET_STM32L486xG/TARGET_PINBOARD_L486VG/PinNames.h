@@ -48,12 +48,12 @@ typedef enum {
 typedef enum {
     PA_0  = 0x00,
     PA_0_ALT0 = PA_0 | ALT0,
-    PA_0_ALT1 = PA_0 | ALT1,
     PA_1  = 0x01,
     PA_1_ALT0 = PA_1 | ALT0,
-    PA_1_ALT1 = PA_1 | ALT1,
     PA_2  = 0x02,
+    PA_2_ALT0 = PA_2 | ALT0,
     PA_3  = 0x03,
+    PA_3_ALT0 = PA_3 | ALT0,
     PA_4  = 0x04,
     PA_4_ALT0 = PA_4 | ALT0,
     PA_5  = 0x05,
@@ -85,20 +85,16 @@ typedef enum {
     PB_3_ALT0 = PB_3 | ALT0,
     PB_4  = 0x14,
     PB_4_ALT0 = PB_4 | ALT0,
-    PB_4_ALT1 = PB_4 | ALT1,
     PB_5  = 0x15,
     PB_5_ALT0 = PB_5 | ALT0,
-    PB_5_ALT1 = PB_5 | ALT1,
     PB_6  = 0x16,
     PB_6_ALT0 = PB_6 | ALT0,
     PB_7  = 0x17,
     PB_7_ALT0 = PB_7 | ALT0,
     PB_8  = 0x18,
     PB_8_ALT0 = PB_8 | ALT0,
-    PB_8_ALT1 = PB_8 | ALT1,
     PB_9  = 0x19,
     PB_9_ALT0 = PB_9 | ALT0,
-    PB_9_ALT1 = PB_9 | ALT1,
     PB_10 = 0x1A,
     PB_11 = 0x1B,
     PB_12 = 0x1C,
@@ -160,7 +156,7 @@ typedef enum {
     PD_13 = 0x3D,
     PD_14 = 0x3E,
     PD_15 = 0x3F,
-    
+
     PE_0  = 0x40,
     PE_1  = 0x41,
     PE_2  = 0x42,
@@ -169,15 +165,14 @@ typedef enum {
     PE_5  = 0x45,
     PE_6  = 0x46,
     PE_7  = 0x47,
-    PE_8  = 0x48,
+    PE_8  = 0x48, 
     PE_9  = 0x49,
-    PE_10 = 0x4A,
+    PE_10 = 0x4A, 
     PE_11 = 0x4B,
     PE_12 = 0x4C,
     PE_13 = 0x4D,
     PE_14 = 0x4E,
     PE_15 = 0x4F,
-
 
     PH_0  = 0x70,
     PH_1  = 0x71,
@@ -187,39 +182,66 @@ typedef enum {
     ADC_VREF = 0xF1,
     ADC_VBAT = 0xF2,
 
-    // Tamper pins
-
     // STDIO for console print
 #ifdef MBED_CONF_TARGET_STDIO_UART_TX
     STDIO_UART_TX = MBED_CONF_TARGET_STDIO_UART_TX,
 #else
-    STDIO_UART_TX = PA_2,
+    STDIO_UART_TX = PC_11,
 #endif
 #ifdef MBED_CONF_TARGET_STDIO_UART_RX
     STDIO_UART_RX = MBED_CONF_TARGET_STDIO_UART_RX,
 #else
-    STDIO_UART_RX = PA_3,
+    STDIO_UART_RX = PC_10,
 #endif
 
-    // Generic signals namings
-    LED1        = PA_5,
-    LED2        = PA_5,
-    LED3        = PA_5,
-    LED4        = PA_5,
-    USER_BUTTON = PC_13,
-    // Standardized button names
-    BUTTON1 = USER_BUTTON,
-    SERIAL_TX   = STDIO_UART_TX,
-    SERIAL_RX   = STDIO_UART_RX,
-    USBTX       = STDIO_UART_TX,
-    USBRX       = STDIO_UART_RX,
-    I2C_SCL     = PB_8,
-    I2C_SDA     = PB_9,
-    SPI_MOSI    = PA_7,
-    SPI_MISO    = PA_6,
-    SPI_SCK     = PA_5,
-    SPI_CS      = PB_6,
-    PWM_OUT     = PB_3,
+    LED1 = PE_9,
+    LED2 = PE_11,
+    BEEP = PE_5,
+    OPTO = PE_4,
+
+    RS485_RX = PB_7,
+    RS485_TX = PB_6,
+    RS485_EN = PE_1,
+
+    CAN_TX = PB_9,
+    CAN_RX = PB_8,
+    CAN_EN = PE_0,
+
+    PLC_RX = PC_5,
+    PLC_TX = PC_4,
+    PLC_BR0 = PA_6,
+    PLC_BR1 = PA_5,
+    PLC_RST = PA_7,
+    PLC_REQ = PA_4,
+
+    METRE_RX = PD_2,
+    METRE_TX = PD_12,
+    METRE_CS1 = PD_3,
+    METRE_CS2 = PD_6,
+    METRE_CS3 = PB_4,
+    /*METRE_EN1 = ,
+    METRE_EN2 = ,
+    METRE_EN3 = ,
+    METRE_SYN1 = ,
+    METRE_SYN2 = ,
+    METRE_SYN3 = ,
+    METRE_INT11,
+    METRE_INT12,
+    METRE_INT21,
+    METRE_INT22,
+    METRE_INT31,
+    METRE_INT32,*/
+
+
+
+
+
+
+
+
+
+
+
 
     /**** USB pins ****/
     USB_OTG_FS_DM = PA_11,
@@ -243,8 +265,14 @@ typedef enum {
     SYS_JTMS_SWDIO = PA_13,
     SYS_JTRST = PB_4,
     SYS_PVD_IN = PB_7,
+    SYS_TRACECLK = PE_2,
+    SYS_TRACED0 = PE_3,
+    SYS_TRACED1 = PE_4,
+    SYS_TRACED2 = PE_5,
+    SYS_TRACED3 = PE_6,
     SYS_WKUP1 = PA_0,
     SYS_WKUP2 = PC_13,
+    SYS_WKUP3 = PE_6,
     SYS_WKUP4 = PA_2,
     SYS_WKUP5 = PC_5,
 
