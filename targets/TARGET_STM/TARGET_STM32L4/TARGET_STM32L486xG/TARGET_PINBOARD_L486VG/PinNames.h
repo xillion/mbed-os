@@ -219,29 +219,45 @@ typedef enum {
     METRE_CS1 = PD_3,
     METRE_CS2 = PD_6,
     METRE_CS3 = PB_4,
-    /*METRE_EN1 = ,
-    METRE_EN2 = ,
-    METRE_EN3 = ,
-    METRE_SYN1 = ,
-    METRE_SYN2 = ,
-    METRE_SYN3 = ,
-    METRE_INT11,
-    METRE_INT12,
-    METRE_INT21,
-    METRE_INT22,
-    METRE_INT31,
-    METRE_INT32,*/
+    
+    METRE_EN1 = PC_9,
+    METRE_EN2 = PE_3,
+    METRE_EN3 = PA_15,
+    METRE_SYN1 = PA_8,
+    METRE_SYN2 = PE_2,
+    METRE_SYN3 = PB_5,
+    METRE_INT11 = PD_0,
+    METRE_INT12 = PD_1,
+    METRE_INT21 = PD_4,
+    METRE_INT22 = PD_5,
+    METRE_INT31 = PD_7,
+    METRE_INT32 = PB_3,
+    
+    LCD_DB7     = PB_12,
+    LCD_DB6     = PB_13,
+    LCD_DB5     = PB_14,
+    LCD_DB4     = PB_15,
+    LCD_E       = PD_12,
+    LCD_RW      = PD_13,
+    LCD_RS      = PD_14,
 
+    RF_IRQ      = PE_13,
+    RF_REQ      = PE_14,
+    RF_RST      = PE_15,
+    RF_RX       = PB_10,
+    RF_TX       = PB_11,
 
+    GSM_TX      = PA_2,
+    GSM_RX      = PA_3,
 
+    VCHARGE     = PC_1,
+    FCHARGE     = PA_0,
+    ECHARGE     = PC_2,
+    SCHARGE     = PA_1,
 
-
-
-
-
-
-
-
+    IDS1 = PC_13,
+    IDS2 = PC_0,
+    IDS3 = PE_6,
 
     /**** USB pins ****/
     USB_OTG_FS_DM = PA_11,
