@@ -48,8 +48,12 @@ typedef enum {
 typedef enum {
     PA_0  = 0x00,
     PA_0_ALT0 = PA_0 | ALT0,
+    PA_0_ALT1 = PA_0 | ALT1,
+    PA_0_ALT2 = PA_0 | ALT2,
     PA_1  = 0x01,
     PA_1_ALT0 = PA_1 | ALT0,
+    PA_1_ALT1 = PA_1 | ALT1,
+    PA_1_ALT2 = PA_1 | ALT2,
     PA_2  = 0x02,
     PA_2_ALT0 = PA_2 | ALT0,
     PA_3  = 0x03,
@@ -199,12 +203,12 @@ typedef enum {
 #ifdef MBED_CONF_TARGET_STDIO_UART_TX
     STDIO_UART_TX = MBED_CONF_TARGET_STDIO_UART_TX,
 #else
-    STDIO_UART_TX = PC_11,
+    STDIO_UART_TX = PC_10_ALT0,
 #endif
 #ifdef MBED_CONF_TARGET_STDIO_UART_RX
     STDIO_UART_RX = MBED_CONF_TARGET_STDIO_UART_RX,
 #else
-    STDIO_UART_RX = PC_10,
+    STDIO_UART_RX = PC_11_ALT0,
 #endif
 
     LED1 = PE_9,

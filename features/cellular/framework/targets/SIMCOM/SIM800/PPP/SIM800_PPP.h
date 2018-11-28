@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2018, Arm Limited and affiliates.
+ * Copyright (c) 2017, Arm Limited and affiliates.
  * SPDX-License-Identifier: Apache-2.0
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,27 +15,23 @@
  * limitations under the License.
  */
 
-#ifndef SIM800_AT_H_
-#define SIM800_AT_H_
+#ifndef SIM800_PPP_H_
+#define SIM800_PPP_H_
 
 #include "AT_CellularDevice.h"
 
-namespace mbed
-{
+namespace mbed {
 
-class SIM800_AT : public AT_CellularDevice {
+class SIM800_PPP : public AT_CellularDevice {
 public:
-    SIM800_AT(events::EventQueue &queue);
-    virtual ~SIM800_AT();
+    SIM800_PPP(events::EventQueue &queue);
+    virtual ~SIM800_PPP();
 
 protected: // AT_CellularDevice
     virtual AT_CellularNetwork *open_network_impl(ATHandler &at);
     virtual AT_CellularPower *open_power_impl(ATHandler &at);
-
-public: // NetworkInterface
-    void handle_urc(FileHandle *fh);
 };
 
 } // namespace mbed
 
-#endif // SIM800_AT_H_
+#endif // SIM800_PPP_H_
